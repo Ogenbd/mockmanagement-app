@@ -40,4 +40,4 @@ const app = new Vue({
     'main-nav': MainNav,
 
   }
-}).$mount('#app')
+}).$mount('#app' )
