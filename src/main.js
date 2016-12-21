@@ -2,9 +2,12 @@ import style from './style.scss';
 import Vue from 'vue'
 import VueRouter from 'vue-router';
 
-import Home from './components/home';
-import About from './components/about';
-import MainNav from './components/main-nav';
+import Home from './App/home';
+import About from './App/about';
+import MainNav from './App/main-nav';
+import Email from './App/email';
+import Events from './App/events';
+import Places from './App/places';
 
 Vue.use(VueRouter);
 
@@ -14,7 +17,17 @@ const routes = [{
 }, {
   path: '/about',
   component: About
-}]
+}, {
+  path: '/email',
+  component: Email
+}, {
+  path: '/events',
+  component: Events
+}, {
+  path: '/places',
+  component: Places
+}
+]
 
 const router = new VueRouter({
   mode: 'history',
@@ -24,6 +37,7 @@ const router = new VueRouter({
 const app = new Vue({
   router,
   components: {
-    'main-nav': MainNav
+    'main-nav': MainNav,
+
   }
 }).$mount('#app')
