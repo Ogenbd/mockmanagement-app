@@ -1,5 +1,8 @@
-
-<section class="event-list">
-  <h1>event-list Component</h1>
-</section>
-
+<div class="event-list">
+    <div v-for="(currEvent, idx) in events">
+        <event-preview 
+            :event="currEvent"
+            @click.native="$emit('selectEvent',currEvent.id)">
+        </event-preview>
+    </div>
+</div>

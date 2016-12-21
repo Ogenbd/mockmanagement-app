@@ -1,5 +1,13 @@
-
 <section class="event-filter">
-  <h1>event-filter Component</h1>
+  <input type="text" @keyup.enter="emitFilter" v-model.lazy="filter.name">  
+  <p class="control">
+    <span class="select">
+    <select>
+      <option>By Name</option>
+      <option>By Venue</option>
+      <option>By Date</option>
+    </select>
+  </span>
+  </p>
 </section>
 
