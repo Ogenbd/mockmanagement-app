@@ -1,5 +1,11 @@
-
-<section class="email">
-  <h1>email Component</h1>
+<section>
+    <div class="top-bar">
+        <email-filter class="filter" @filterChanged="emailFilter = $event"></email-filter>
+        <email-compose class="email-compose" @showCompose="showCompose = true"></email-compose>
+    </div>
+    <div class="container columns">
+        <email-list :emails="emailsToDisplay" @selectEmail="selectEmail"></email-list>
+        <email-details :selectedEmail="selectedEmail" @deleteEmail="deleteEmail"></email-details>
+    </div>
+    <email-status class="status-bar" :emails="emails"></email-status>
 </section>
-
