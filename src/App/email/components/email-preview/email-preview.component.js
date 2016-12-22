@@ -1,6 +1,11 @@
 export default  {
   name: 'email-preview',
-  props: [],
+  props:  {
+            email: {
+                required: true,
+                type: Object
+            }
+          },
   mounted() {
     
   },
@@ -10,7 +15,10 @@ export default  {
     }
   },
   methods: {
-   
+    showEmailBody() {
+                this.$emit('showEmailBody', this.email.id);
+                console.log('shows email body', this.email.id);
+		    }
   },
   computed: {
 

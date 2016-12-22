@@ -1,5 +1,16 @@
-
-<section class="email-details">
-  <h1>email-details Component</h1>
-</section>
-
+<!--<section>-->
+  <div class="card column is-three-quarters">
+    <header class="level card-header">
+      <p class="subject card-header-title">
+        {{selectedEmail.subject}}
+      </p>
+      <a class="button is-pulled-right" @click="markUnread">Mark as unread</a>
+      <a class="button is-pulled-right is-danger" @click="deleteEmail">Delete</a>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <p class="body has-text-left">{{selectedEmail.body}}</p>
+      </div>
+    </div>
+  </div>
+<!--</section>-->

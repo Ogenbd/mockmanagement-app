@@ -1,5 +1,7 @@
-
-<section class="email-preview">
-  <h1>email-preview Component</h1>
+<section>
+  <div class="box" :class="{selected: email.isSelected}">
+    <div class="content">
+      <p class="preview-subject" :class="{isRead: email.isRead}">{{email.subject}}</p>
+    </div>
+  </div>
 </section>
-
