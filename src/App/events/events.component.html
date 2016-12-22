@@ -1,5 +1,5 @@
-
 <section class="events">
-  <h1>events Component</h1>
+  <event-filter @filterChanged="eventsFilter = $event"></event-filter>
+  <event-list :events="events"></event-list>
 </section>
 

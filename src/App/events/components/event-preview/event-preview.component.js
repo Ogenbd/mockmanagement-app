@@ -1,6 +1,10 @@
 export default  {
   name: 'event-preview',
-  props: [],
+  props: {
+          event: {
+              required: true,
+              type: Object
+          },
   mounted() {
     
   },
@@ -15,5 +19,6 @@ export default  {
   computed: {
 
   }
+}
 }
 

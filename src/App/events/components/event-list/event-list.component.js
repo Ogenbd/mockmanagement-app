@@ -1,6 +1,13 @@
+import EventPreview from '../event-preview'
+
 export default  {
   name: 'event-list',
-  props: [],
+  props: { 
+            events: {
+                required: true,
+                type: Array
+            },
+  },
   mounted() {
     
   },
@@ -14,6 +21,9 @@ export default  {
   },
   computed: {
 
+  },
+  components: {
+    'event-preview' : EventPreview
   }
 }
 
