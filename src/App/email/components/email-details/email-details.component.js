@@ -14,6 +14,9 @@ export default  {
         methods: {
             deleteEmail() {
                 this.$emit('deleteEmail', {emailId: this.selectedEmail.id});
+            },
+            markUnread() {
+                this.$emit('markUnread', {emailId: this.selectedEmail.id});
             }
         },
     }

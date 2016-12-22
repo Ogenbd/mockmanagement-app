@@ -4,7 +4,7 @@
       <p class="subject card-header-title">
         {{selectedEmail.subject}}
       </p>
-      <a class="button is-pulled-right">Mark as unread</a>
+      <a class="button is-pulled-right" @click="markUnread">Mark as unread</a>
       <a class="button is-pulled-right is-danger" @click="deleteEmail">Delete</a>
     </header>
     <div class="card-content">

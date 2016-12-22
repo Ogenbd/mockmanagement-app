@@ -41,7 +41,8 @@ export default {
     selectEmail(emailId) {
       if(this.selectedEmailId !== emailId) {
         this.changeSelected(emailId);
-        let selectedEmailArr = this.emails.filter(email => email.id === this.selectedEmailId);
+        // maybe reduce is a better idea
+        let selectedEmailArr = this.emails.filter(email => email.id === this.selectedEmailId); 
         this.selectedEmail = selectedEmailArr[0];    //[this.selectedEmailId];
         console.log('should be: ', emailId, 'is: ', this.selectedEmail.id);
       }
@@ -66,6 +67,17 @@ export default {
     showCompose() {
       console.log('modal opened');
 
+    },
+    //doesnt work yet
+    markUnread(emailId) {
+      this.emails.forEach(email => {
+        if(email.id === emailId) email.isRead = false;
+      });
+      console.log(this.selectedEmail.isRead);
+    },
+    saveEmail(email) {
+      email.id = this.emails[this.emails.length - 1].id + 1;
+      this.emails.push(email);
     }
 
   },

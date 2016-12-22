@@ -7,13 +7,13 @@
         <h2 class="title">Compose Email</h2>
         <label class="label">Subject</label>
         <p class="control">
-          <input class="input" type="text">
+          <input class="input" type="text" v-model="email.subject">
         </p>
         <label class="label">Body</label>
         <p class="control">
-          <input class="textarea">
+          <input class="textarea" v-model="email.body">
         </p>
-        <button class="button is-medium is-primary is-pulled-right">Send</button>
+        <button class="button is-medium is-primary is-pulled-right" @click="save">Save</button>
       </div>
       <button @click="showCompose = false" class="modal-close"></button>
     </div>
