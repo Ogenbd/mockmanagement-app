@@ -27,8 +27,9 @@ export default {
   },
 
   created() {
-    this.reloadEmails();
+    this.reloadEmails()
     this.selectedEmail = this.emails[0];
+    // console.log(this.selectedEmail);
   },
 
   methods: {
@@ -37,7 +38,7 @@ export default {
         this.changeSelected(emailId);
         // maybe reduce is a better idea
         let selectedEmailArr = this.emails.filter(email => email.id === this.selectedEmailId);
-        this.selectedEmail = selectedEmailArr[0];    //[this.selectedEmailId];
+        this.selectedEmail = selectedEmailArr[0];
         console.log('should be: ', emailId, 'is: ', this.selectedEmail.id);
       }
     },
@@ -65,12 +66,13 @@ export default {
 
     },
     //doesnt work yet
-    markUnread(emailId) {
-      this.emails.forEach(email => {
-        if (email.id === emailId) email.isRead = false;
-      });
-      console.log(this.selectedEmail.isRead);
-    },
+    // markUnread(emailId) {
+    //   this.emails.forEach(email => {
+    //     if (email.id === emailId) email.isRead = false;
+    //   });
+    //   console.log(this.selectedEmail.isRead);
+    // },
+    
     saveEmail(email, ) {
       console.log(email);
       this.$http.post('email', email)
@@ -83,7 +85,6 @@ export default {
       this.$http.get('email')
         .then(res => res.json())
         .then(emails => this.emails = emails)
-        .then(this.selectedEmail = this.emails[0])
     }
 
   },
@@ -93,6 +94,14 @@ export default {
         return email.subject.toLowerCase().includes(this.emailFilter.subject.toLowerCase());
       })
     },
+    selectedEmailIs() {
+      this.emails.forEach(email => {
+        if(email.isSelected) {
+          this.selectedEmailId = email.id;
+          this.selectedEmail = email;
+        }
+      })
+    }
   }
 }
 
