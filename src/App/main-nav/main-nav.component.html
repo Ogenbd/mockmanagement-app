@@ -1,13 +1,11 @@
-<nav class="nav">
-  <div class="navbar-header">
-    <router-link to="/" class="navbar-brand">CodingAcadmey Vue</router-link></li>
-  </div>
-  <div>
-    <ul class="nav navbar-nav">
-        <li><router-link to="/about">About</router-link></li>
-        <li><router-link to="/email">Email</router-link></li>
-        <li><router-link to="/events">Events</router-link></li>
-        <li><router-link to="/places">Places</router-link></li>
-    </ul>
+<nav class="nav has-shadow">
+  <div class="container">
+    <div class="nav-left">
+      <router-link to="/" class="nav-item is-tab is-active" :class="">Home</router-link>
+      <router-link to="/about" class="nav-item is-tab">About</router-link>
+      <router-link to="/email" class="nav-item is-tab">Email</router-link>
+      <router-link to="/events" class="nav-item is-tab">Events</router-link>
+      <router-link to="/places" class="nav-item is-tab">Places</router-link>
+    </div>
   </div>
 </nav>
