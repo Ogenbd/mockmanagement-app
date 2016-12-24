@@ -1,9 +1,9 @@
-<section>
+<section class="email">
     <div class="top-bar">
         <email-filter class="filter" @filterChanged="emailFilter = $event"></email-filter>
         <email-compose class="email-compose" @showCompose="showCompose = true" @save="saveEmail"></email-compose>
     </div>
-    <div class="container columns">
+    <div class="columns">
         <email-list :emails="emailsToDisplay" @selectEmail="selectEmail"></email-list>
         <email-details v-if="showDetails" :selectedEmail="selectedEmail" @deleteEmail="deleteEmail"></email-details>
     </div>
