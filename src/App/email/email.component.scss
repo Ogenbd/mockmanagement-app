@@ -5,7 +5,7 @@
   text-align: center;
   color: #2c3e50;
   // margin-top: 60px;
-  // width: 100%;
+  width: 100%;
 }
 
 h1, h2 {
@@ -24,6 +24,10 @@ li {
 
 a {
   color: #42b983;
+}
+
+.columns {
+    margin: 1px;
 }
 
 // .container {
@@ -49,8 +53,11 @@ a {
 
 .top-bar {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 20px;
+  align-items: center;
+  max-width: 100%;
 }
 
 .selected {
@@ -61,4 +68,10 @@ a {
 
 .isRead {
     font-weight: normal;
+}
+
+@media (max-width: 360px) {
+  .top-bar {
+    justify-content: space-around;
+  }
 }
