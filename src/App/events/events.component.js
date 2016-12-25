@@ -1,6 +1,7 @@
 import EventDetails from './components/event-details'
 import EventList from './components/event-list'
 import EventFilter from './components/event-filter'
+import EventEditCreate from './components/event-edit-create'
 
 
 export default {
@@ -13,7 +14,9 @@ export default {
   data() {
     return {
       events: [],
-      filterdEvents: []
+      filterdEvents: [],
+      eventToEdit: undefined,
+      showEventEdit: false
     }
   },
   methods: {
@@ -47,6 +50,7 @@ export default {
     'event-details': EventDetails,
     'event-list': EventList,
     'event-filter': EventFilter,
+    'event-edit-create': EventEditCreate
 
   },
 }

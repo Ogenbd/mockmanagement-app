@@ -38,7 +38,10 @@ const routes = [{
   path: '/events/:id',
   component: EventDetails
 },
-
+{
+  path: '/events/:id/edit',
+  component: EventEdit
+},
 {
   path: '/places',
   component: Places

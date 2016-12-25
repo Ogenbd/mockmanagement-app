@@ -18,6 +18,9 @@ export default {
         .then(event => this.event = event);
         console.log('event', this.event);     
     },
+    editEvent() {
+                this.$emit('doEdit', this.event);
+            }
     // moment: function (date) {
     //   return moment(date);
     // }

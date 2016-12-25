@@ -4,6 +4,7 @@
     <p class="title is-1">
       {{event.name}}
     </p>
+    <router-link class="button is-primary" :to="`/events/${event.id}/edit`">Edit this event</router-link>
   </header>
   <div class="card-content">
     <div class="content">

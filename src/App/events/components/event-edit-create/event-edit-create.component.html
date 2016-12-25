@@ -1,5 +1,39 @@
-
-<section class="event-edit-create">
-  <h1>event-edit-create Component</h1>
+<section>
+  <div class="event-details card is-fullwidth">
+    <header class="card-header">
+      <p class="title is-1">
+        Edit/Create Event
+      </p>
+    </header>
+    <div class="card-content">
+      <div class="content">
+        <label class="label">Event Name</label>
+        <p class="control">
+          <input v-model="eventToEdit.name" class="input" type="text">
+        </p>
+        <label class="label">Status</label>
+        <p class="control">
+          <input class="input" v-model="eventToEdit.status" type="text">
+        </p>
+        <label class="label">Venue</label>
+        <p class="control">
+          <input class="input" v-model="eventToEdit.venue.name" type="text">
+        </p>
+        <label class="label">Time and Date</label>
+        <p class="control">
+          <input class="input" v-model="eventToEdit.time" type="text">
+        </p>
+        <label class="label">Link to Event</label>
+        <p class="control">
+          <input class="input" v-model="eventToEdit.link" type="text">
+        </p>
+        <label class="label">Description</label>
+        <p class="control">
+          <input class="input" v-model="eventToEdit.description" type="text">
+        </p>
+        <a class="button is-primary" @click.prevent="save">Save</a>
+      </div>
+    </div>
 </section>
 
+Name  Status  Description  Venue  Time  Link to original event (if have)
