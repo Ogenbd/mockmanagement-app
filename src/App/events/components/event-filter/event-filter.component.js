@@ -1,4 +1,3 @@
-
 export default {
   name: 'event-filter',
   props: ['eventsData'],
@@ -50,3 +49,4 @@ export default {
   //   }
   // }
 }
+
