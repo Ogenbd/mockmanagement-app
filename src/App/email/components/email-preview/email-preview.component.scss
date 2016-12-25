@@ -1,3 +1,26 @@
-.email-preview {
+.box {
+  border-radius: 0px;
+  margin: 3px;
+  text-align: left;
+  min-height: 50px;
+}
 
+.box:hover {
+  transition: 0.5s;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.selected {
+    transform: translateX(15px);
+    transition: 0.3s;
+    border-left: solid 7px #00D1B2;
+}
+
+.preview-subject{
+    font-weight: bold;
+}
+
+.isRead {
+    font-weight: normal;
 }

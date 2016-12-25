@@ -1,3 +1,77 @@
 .email {
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+  // margin-top: 60px;
+  width: 100%;
+}
 
+h1, h2 {
+  font-weight: normal;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+a {
+  color: #42b983;
+}
+
+.columns {
+    margin: 1px;
+}
+
+// .container {
+//   margin-top: 100px;
+// }
+.filter {
+  // padding: 20px;
+  float: right;
+}
+
+.status-bar {
+  // position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.email-compose {
+  // position: fixed;
+  top: 20px;
+  right: 30px;
+  z-index: 100;
+}
+
+.top-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+  align-items: center;
+  max-width: 100%;
+}
+
+.selected {
+    transform: translateX(20px);
+    transition: 0.3s;
+    border-left: solid 7px #00D1B2;
+}
+
+.isRead {
+    font-weight: normal;
+}
+
+@media (max-width: 360px) {
+  .top-bar {
+    justify-content: space-around;
+  }
 }

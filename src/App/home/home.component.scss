@@ -1,3 +1,37 @@
-h1 {
-  color: lightblue;
+.welcome-mat {
+  margin-top: 50px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.home-links {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  text-align: center;
+}  
+
+.box {
+  width: 350px;
+  height: 250px;
+  margin: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #00D1B2;
+  font-size: 3em;
+  color: white;
+}
+
+.box:hover {
+  background-color: white;
+  color: #00D1B2;
+  transition: 0.3s ease-in-out;
+}
+
+@media (max-width: 1200px) {
+  .box {
+  width: 250px;
+  }
 }

@@ -1,5 +1,8 @@
-
-<section class="email-list">
-  <h1>email-list Component</h1>
-</section>
-
+<!--<section>-->
+  <div class="column is-one-quarter">
+    <div v-for="email in emails">
+      <email-preview :email="email" @click.native="$emit('selectEmail', email)">
+      </email-preview>
+    </div>
+  </div>
+<!--</section>-->
