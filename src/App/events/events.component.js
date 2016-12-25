@@ -30,6 +30,7 @@ export default {
                  this.$http.get('events')
                     .then(res => res.json())
                     .then(events => this.events = events);
+                    // console.log(this.events);
                 //  this.EventToEdit = undefined;   
                 //  this.showEventEdit = false;
             }
@@ -38,7 +39,9 @@ export default {
 
   },
   created() {
+    console.log('dfghfsdg');
     this.reloadEvents();
+    this.filterdEvents = this.events;
   },
   components: {
     'event-details': EventDetails,
@@ -46,8 +49,5 @@ export default {
     'event-filter': EventFilter,
 
   },
-  created() {
-    this.filterdEvents = this.events;
-  }
 }
 
