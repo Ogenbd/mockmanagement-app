@@ -1,4 +1,19 @@
 <section v-if="event">
-    <h1>{{event.name}} </h1>
-    <h2>{{event.group.venue}} </h2>
+    <div class="event-details card is-fullwidth">
+  <header class="card-header">
+    <p class="title is-1">
+      {{event.name}}
+    </p>
+  </header>
+  <div class="card-content">
+    <div class="content">
+    <p class="title is-3">{{event.venue.name}}</p> 
+      <a v-bind:href="event.link">Link to original event</a> <br>
+        
+        <p class="title is-5">{{event.status}}</p>
+      <p v-html="event.description"></p>
+      
+    </div>
+  </div>
+</div>
 </section>
