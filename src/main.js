@@ -1,5 +1,6 @@
 import style from './style.scss';
 import Vue from 'vue'
+import VueResource from 'vue-resource'
 import VueRouter from 'vue-router';
 import VueResource from 'vue-resource'
 
@@ -18,11 +19,12 @@ import Places from './App/places';
 
 Vue.use(VueResource);
 Vue.use(VueRouter);
+Vue.use(VueResource);
 
 Vue.http.options.root = 'http://localhost:3003';
 
 const routes = [{
-  path: '/',
+  path: '/home',
   component: Home
 }, {
   path: '/about',
@@ -43,7 +45,10 @@ const routes = [{
 {
   path: '/places',
   component: Places
-}, {path: '*', redirect: '/'}
+}, {
+  path: '*', 
+  redirect: '/home'
+}
 ]
 // {
 //   path: '/events', component: Events, children: [
@@ -58,6 +63,8 @@ const router = new VueRouter({
   mode: 'history',
   routes
 })
+
+Vue.http.options.root = 'http://localhost:3003';
 
 const app = new Vue({
   router,

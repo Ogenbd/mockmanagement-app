@@ -1,5 +1,6 @@
 <section class="events">
-  <!--<event-filter @filterChanged="eventsFilter = $event"></event-filter>-->
-  <event-list :events="events" @openDetails="openDetails"></event-list>
+  <event-filter :eventsData="events" @filterChanged="eventsFilter"></event-filter>
+<!--{{filterdEvents}}-->
+  <event-list :events="filterdEvents" @openDetails="openDetails"></event-list>
 </section>
 

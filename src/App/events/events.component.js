@@ -3,16 +3,17 @@ import EventList from './components/event-list'
 import EventFilter from './components/event-filter'
 
 
-export default  {
+export default {
   name: 'events',
-  eventsFilter: {name: ''},
+  eventsFilter: { name: '' },
   props: [],
   mounted() {
-    
+
   },
   data() {
     return {
       events: [],
+      filterdEvents: []
     }
   },
   methods: {
@@ -20,6 +21,10 @@ export default  {
      this.$router.push(`/events/${eventId}`);
      console.log('Pushing eventId to Router', eventId);
    },
+   eventsFilter(val) {
+      console.log('val', JSON.parse(JSON.stringify(val)));
+      this.filterdEvents = val;
+    },
    reloadEvents() {
                 // fetch('http://localhost:3003/item')
                  this.$http.get('events')
@@ -36,10 +41,13 @@ export default  {
     this.reloadEvents();
   },
   components: {
-    'event-details' : EventDetails,
-    'event-list' : EventList,
-    'event-filter' : EventFilter,
-    
+    'event-details': EventDetails,
+    'event-list': EventList,
+    'event-filter': EventFilter,
+
+  },
+  created() {
+    this.filterdEvents = this.events;
   }
 }
 

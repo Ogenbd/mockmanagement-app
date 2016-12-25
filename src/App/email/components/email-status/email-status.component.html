@@ -1,5 +1,15 @@
-
-<section class="email-status">
-  <h1>email-status Component</h1>
-</section>
-
+<!--<section>-->
+  <div class="box">
+    <div class="status-info">
+      <div class="level-item has-text-centered">
+        <p class="heading">Emails</p>
+        <p class="title">{{emails.length}}</p>
+      </div>
+      <div class="level-item has-text-centered">
+        <p class="heading">Read</p>
+        <p class="title">{{readEmails}}</p>
+      </div>
+    </div>
+    <progress class="progress is-primary is-small" name="move" :value="readEmails" :max="emails.length"></progress>
+  </div>
+<!--</section>-->
