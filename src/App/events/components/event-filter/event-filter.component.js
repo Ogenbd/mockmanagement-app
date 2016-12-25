@@ -43,10 +43,10 @@ export default {
     }
   },
 
-  // watch:{
-  //   filter: function(){
-  //     console.log('watch filter');
-  //   }
-  // }
+  watch:{
+    eventsData: function(){
+        this.emitFilter();
+    }
+  }
 }
 
