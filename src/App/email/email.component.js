@@ -10,10 +10,10 @@ export default {
     return {
       title: 'Email App',
       emails: [],
+      filteredEmails: [],
       showDetails: false,
       selectedEmail: null,
-      showCompose: false,
-      emailFilter: { subject: '' }
+      showCompose: false
     }
   },
   components: {
@@ -80,13 +80,7 @@ export default {
     }
 
   },
-  computed: {
-    emailsToDisplay() {
-      return this.emails.filter(email => {
-        return email.subject.toLowerCase().includes(this.emailFilter.subject.toLowerCase());
-      })
-    }
-  },
+  
   watch: {
     emails: function () {
       this.showDetails = true;

@@ -1,10 +1,10 @@
 <section class="email">
     <div class="top-bar">
-        <email-filter class="filter" @filterChanged="emailFilter = $event"></email-filter>
+        <email-filter class="filter" :emails="emails" @filterChanged="filteredEmails = $event"></email-filter>
         <email-compose class="email-compose" @showCompose="showCompose = true" @save="saveEmail"></email-compose>
     </div>
     <div class="columns">
-        <email-list :emails="emailsToDisplay" @selectEmail="selectEmail"></email-list>
+        <email-list :emails="filteredEmails" @selectEmail="selectEmail"></email-list>
         <email-details v-if="showDetails" :selectedEmail="selectedEmail" @deleteEmail="deleteEmail"></email-details>
     </div>
     <email-status class="status-bar" :emails="emails"></email-status>
