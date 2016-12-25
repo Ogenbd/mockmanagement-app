@@ -7,34 +7,46 @@ export default {
   },
   data() {
     return {
-      filter: { str: '' }
+      filter: { str: '', focus: 'By Name' }
     }
   },
   methods: {
     emitFilter() {
       let filtEvs = [];
+      let filterBy = this.filter.focus.toLowerCase().substring(3);
 
-      // this.eventsData.forEach( (event) => {
-      //   let res = event.name.indexOf(this.filter.str);
-      //   if (res != -1) filtEvs.push(event);
-      // });
+      // If the filter input is empty than returns all the events in the database.
       if(!this.filter.str){
-        filtEvs = this.eventsData
+        filtEvs = this.eventsData;
       } else {
+
+        let mutableSrc;
         filtEvs = this.eventsData.filter( (event) => {
-          return (event.name.indexOf(this.filter.str) > -1);
-        });
+        switch(filterBy) {
+          
+          case 'name':
+          mutableSrc = event.name;        
+          break;
+
+          case 'venue':
+          mutableSrc = event.venue.name + " " + event.venue.address_1 + " " + event.venue.city + " " + event.venue.country + " " + event.venue.localized_country_name;
+          break;
+
+          case 'date':
+          mutableSrc = event.time;
+          break;
+        }
+            return (mutableSrc.toLowerCase().indexOf(this.filter.str.toLowerCase()) > -1);
+          });
+        
       }
-
-      console.log('filteremitting', filtEvs);
-
       this.$emit('filterChanged', filtEvs);
     }
   },
 
-  watch:{
-    filter: function(){
-      console.log('watch filter');
-    }
-  }
+  // watch:{
+  //   filter: function(){
+  //     console.log('watch filter');
+  //   }
+  // }
 }

@@ -2,7 +2,7 @@
   <input type="text" @keyup="emitFilter" v-model="filter.str">  
   <p class="control">
     <span class="select">
-    <select>
+    <select v-model="filter.focus">
       <option>By Name</option>
       <option>By Venue</option>
       <option>By Date</option>
