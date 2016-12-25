@@ -2,14 +2,11 @@ import style from './style.scss';
 import Vue from 'vue'
 import VueResource from 'vue-resource'
 import VueRouter from 'vue-router';
-import VueResource from 'vue-resource'
-
 
 import Home from './App/home';
 import About from './App/about';
 import MainNav from './App/main-nav';
 import Email from './App/email';
-
 
 import Events from './App/events';
 import EventEdit from './App/events/components/event-edit-create';
