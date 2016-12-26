@@ -20,31 +20,30 @@ export default {
     }
   },
   methods: {
-   openDetails(eventId) {
-     this.$router.push(`/events/${eventId}`);
-     console.log('Pushing eventId to Router', eventId);
-   },
-   eventsFilter(val) {
-      console.log('val', JSON.parse(JSON.stringify(val)));
+    openDetails(eventId) {
+      this.$router.push(`/events/${eventId}`);
+      console.log('Pushing eventId to Router', eventId);
+    },
+    eventsFilter(val) {
       this.filterdEvents = val;
     },
-   reloadEvents() {
-                // fetch('http://localhost:3003/item')
-                 this.$http.get('events')
-                    .then(res => res.json())
-                    .then(events => this.events = events);
-                    // console.log(this.events);
-                //  this.EventToEdit = undefined;   
-                //  this.showEventEdit = false;
-            }
+    reloadEvents() {
+      // fetch('http://localhost:3003/item')
+      this.$http.get('events')
+        .then(res => res.json())
+        .then(events => {
+          this.events = events;
+        })
+      // console.log(this.events);
+      //  this.EventToEdit = undefined;   
+      //  this.showEventEdit = false;
+    }
   },
   computed: {
 
   },
   created() {
-    console.log('dfghfsdg');
     this.reloadEvents();
-    this.filterdEvents = this.events;
   },
   components: {
     'event-details': EventDetails,

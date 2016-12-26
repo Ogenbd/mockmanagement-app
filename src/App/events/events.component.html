@@ -1,7 +1,8 @@
 <section class="events">
   <event-filter :eventsData="events" @filterChanged="eventsFilter"></event-filter>
 <!--{{filterdEvents}}-->
+
   <router-link class="button new-event is-primary" to="/events/edit">New Event</router-link>
-  <event-list :events="events" @openDetails="openDetails"></event-list>
+  <event-list :events="filterdEvents" @openDetails="openDetails"></event-list>
 </section>
 

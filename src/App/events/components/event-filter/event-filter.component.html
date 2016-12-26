@@ -1,13 +1,14 @@
 <section class="event-filter">
-  <input type="text" @keyup="emitFilter" v-model="filter.str">  
   <p class="control">
     <span class="select">
-    <select v-model="filter.focus">
+    <select @change="resetFilter" v-model="filter.focus">
       <option>By Name</option>
       <option>By Venue</option>
       <option>By Date</option>
     </select>
   </span>
+  <input v-if="filter.focus !== 'By Date'" type="text" @keyup="emitFilter" v-model="filter.str">
+  <input v-else type="date" @keyup="emitFilter" v-model="filter.str">
   </p>
 </section>
 
