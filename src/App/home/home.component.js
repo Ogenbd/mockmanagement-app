@@ -1,7 +1,8 @@
 export default  {
   data: () => {
     return {
-      items: []
+      items: [],
+      placesImage: '/sprint3/src/assets/places.png',
     }
   },
   methods : {

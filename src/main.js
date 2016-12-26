@@ -35,10 +35,17 @@ const routes = [{
   component: Events
 },
 {
+  path: '/events/edit',
+  component: EventEdit
+},
+{
   path: '/events/:id',
   component: EventDetails
 },
-
+{
+  path: '/events/:id/edit',
+  component: EventEdit
+},
 {
   path: '/places',
   component: Places

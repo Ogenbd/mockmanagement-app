@@ -2,7 +2,8 @@
     <div v-for="currEvent in events">
         <event-preview 
             :event="currEvent"
-            @click.native="$emit('openDetails', currEvent.id)">
+            @click.native="$emit('openDetails', currEvent.id)"
+            @doEdit="eventToEdit = $event">
         </event-preview>
     </div>
 </div>

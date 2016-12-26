@@ -1,17 +1,27 @@
 <div>
   <div class="welcome-mat">
-    <h1 class="title is-1">Title placeholder</h1>
-    <h3 class="subtitle is-3">Subtitle placeholder should be longer than title.</h3>
-  </div>
-  <div class="home-links">
-    <router-link class="box" to="/email">
+  <div class="columns">
+  <div class="column">
+    First column
+    <router-link class="" to="/email">
       <p>E-mail</p>
     </router-link>
-    <router-link class="box" to="/events">
+  </div>
+  <div class="column">
+    Second column
+    <router-link class="" to="/events">
       <p>Events</p>
     </router-link>
-    <router-link class="box" to="/places">
+  </div>
+  <div class="column" v-html="">
+    <figure class="image">
+      <img v-if="placesImage" v-bind:src= "placesImage" alt="">
+    </figure>
+    <router-link class="" to="/places">
       <p>Places</p>
     </router-link>
+  </div>
+  <div class="home-links">
+  </div>
   </div>
 </div>
