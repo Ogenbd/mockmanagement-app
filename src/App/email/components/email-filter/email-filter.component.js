@@ -1,21 +1,32 @@
 export default {
   name: 'email-filter',
-  props: [],
-  mounted() {
-
+  props: {
+    emails: {
+      required: true,
+      type: Array
+    }
   },
+
   data() {
     return {
-      filter: { subject: '' }
+      filter: { subject: ''},
+      filteredEmails: []
     }
   },
-  methods: {
-    emitFilter() {
-      this.$emit('filterChanged', this.filter);
-    }
-  },
-  computed: {
 
+  methods: {
+    emailsToDisplay() {
+      this.filteredEmails = this.emails.filter(email => {
+        return email.subject.toLowerCase().includes(this.filter.subject.toLowerCase());
+      })
+      this.$emit('filterChanged', this.filteredEmails);
+    }
+  },
+
+  watch: {
+    emails: function () {
+      this.emailsToDisplay();
+    }
   }
 }
 
