@@ -1,7 +1,7 @@
 export default {
         data() {
             return {
-                event: {name: '', price: 0},// Needs to be changed to match the data
+                event: {name: '', status: '', venue: '', date: '', link: '', description: ''},// Needs to be changed to match the data
                 dataSaved: false,
             }
         },
@@ -26,8 +26,8 @@ export default {
                 }
 
                 console.log('Saving', this.eventToEdit);
-                if (this.event.id)  this.$http.put(`item`, this.eventToEdit).then(handleResult);
-                else this.$http.post('item', this.eventToEdit).then(handleResult);
+                if (this.event.id)  this.$http.put(`events`, this.eventToEdit).then(handleResult);
+                else this.$http.post('events', this.eventToEdit).then(handleResult);
             },
              loadEvent(eventId) {
                 this.$http.get(`events/${eventId}`)
@@ -37,8 +37,13 @@ export default {
         },
        
         created() {
+            console.log('this component has been created');
              const eventId = this.$route.params.id
-             if (eventId)    this.loadEvent(eventId);
+             console.log('Looked for eventId', eventId);
+             if (eventId) {
+             console.log('eventId is:',eventId);
+              this.loadEvent(eventId);
+             }  
         },
         // beforeRouteLeave(to, from, next) {
         //     if (this.dataSaved) return next();

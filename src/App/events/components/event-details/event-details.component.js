@@ -1,3 +1,6 @@
+import GoogleMapsLoader from 'google-maps'; 
+GoogleMapsLoader.KEY = 'AIzaSyBhZ9wVZyGcpSG893EUEOKx1Fm9jP_Bh1Q';
+
 export default {
   name: 'event-details',
   data() {
@@ -16,7 +19,7 @@ export default {
       this.$http.get(`events/${eventId}`)
         .then(res => res.json())
         .then(event => this.event = event);
-        console.log('event', this.event);     
+        console.log('load event:', this.event);     
     },
     editEvent() {
                 this.$emit('doEdit', this.event);
@@ -31,6 +34,23 @@ export default {
     console.log('const eventId gives', eventId);
     this.loadEvent(eventId);
 
+  },
+  updated() {
+      var uluru = {lat: this.event.venue.lat, lng: this.event.venue.lon};
+      console.log(uluru);
+      console.log(this.event);
+      
+      const options = {
+                          zoom: 9,
+                          center: uluru
+                      };
+      GoogleMapsLoader.load(google => {
+          let map = new google.maps.Map(this.$refs.map, options);
+          var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      });
   }
 
 

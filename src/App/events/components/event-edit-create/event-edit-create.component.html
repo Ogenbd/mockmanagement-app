@@ -19,7 +19,7 @@
         <p class="control">
           <input class="input" v-model="eventToEdit.venue.name" type="text">
         </p>
-        <label class="label">Time and Date</label>
+        <label class="label">Date</label>
         <p class="control">
           <input class="input" v-model="eventToEdit.time" type="text">
         </p>
@@ -29,11 +29,9 @@
         </p>
         <label class="label">Description</label>
         <p class="control">
-          <input class="input" v-model="eventToEdit.description" type="text">
+          <textarea class="input" v-model="eventToEdit.description" type="textarea">
         </p>
         <a class="button is-primary" @click.prevent="save">Save</a>
       </div>
     </div>
 </section>
-
-Name  Status  Description  Venue  Time  Link to original event (if have)
