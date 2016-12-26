@@ -16,13 +16,13 @@ export default {
     },
     emitFilter() {
       let filtEvs = [];
-      let filterBy = this.filter.focus.toLowerCase().substring(3);
 
       // If the filter input is empty than returns all the events in the database.
       if (this.filter.str === '') {
         filtEvs = this.eventsData;
       } else {
 
+        let filterBy = this.filter.focus.toLowerCase().substring(3);
         let mutableSrc;
         filtEvs = this.eventsData.filter((event) => {
           switch (filterBy) {
@@ -53,8 +53,6 @@ export default {
             let tgtDay = filterDate[2].slice(1) + '';
             let tgtMonth = filterDate[1] + '';
             let tgtYear = filterDate[0] + '';
-            console.log('Event = Day: ', srcDay, ' Month: ', srcMonth, ' Year: ', srcYear);
-            console.log('Filter = Day: ', tgtDay, ' Month: ', tgtMonth, ' Year: ', tgtYear);
             return ((srcDay === tgtDay) &&
                     (srcMonth === tgtMonth) &&
                     (srcYear === tgtYear)
@@ -67,6 +65,8 @@ export default {
     }
   },
   watch: {
+    // Makes certain to load the current events data, either on first page run
+    // or as they come in updated from the server after are being added/removed
     eventsData: function () {
       this.emitFilter();
     },
