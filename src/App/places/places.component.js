@@ -1,17 +1,26 @@
-import GoogleMapsLoader from 'google-maps';
-GoogleMapsLoader.KEY = 'AIzaSyA0sVNvuL2BJAj8Hn4yr_w-j8CHamvKboc';
+import placeMap from './components/map'
 
 export default {
   name: 'places',
 
-  mounted() {
-    var codingAcademy = { lat: 32.088, lng: 34.803 };
-    const options = {
-      zoom: 13,
-      center: codingAcademy
-    };
-    GoogleMapsLoader.load(google => {
-      new google.maps.Map(this.$refs.map, options);
-    });
+created() {
+  this.reloadPlaces();
+},
+  
+  data() {
+    return {
+      places: []
+    }
+  },
+  components: {
+    'place-map': placeMap,
+  },
+  methods: {
+    reloadPlaces() {
+      this.$http.get('places')
+        .then(res => res.json())
+        .then(places => this.places = places)
+    }
   }
 }
+
